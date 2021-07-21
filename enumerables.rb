@@ -37,10 +37,16 @@ def print_spiciest_foods(spicy_foods)
   print_spicy_foods(spiciest_foods)
 end
 
+# def average_heat_level(spicy_foods)
+#   sum_of_heat_levels = 0
+#   spicy_foods.each do |food|
+#     sum_of_heat_levels += food[:heat_level]
+#   end
+#   sum_of_heat_levels / spicy_foods.length
+# end
+
+
 def average_heat_level(spicy_foods)
-  sum_of_heat_levels = 0
-  spicy_foods.each do |food|
-    sum_of_heat_levels += food[:heat_level]
-  end
+  sum_of_heat_levels = spicy_foods.sum {|food| food[:heat_level]}
   sum_of_heat_levels / spicy_foods.length
 end
